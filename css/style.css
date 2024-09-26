@@ -1,0 +1,116 @@
+html{
+    box-sizing: border-box;
+} 
+
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+ul{
+    list-style-type:none;
+}
+
+button{
+background-color:transparent ;
+padding: 0;
+border: 0;
+cursor: pointer;
+}
+ 
+.container{
+    
+padding: 0 10px;
+margin: 0 auto;
+}
+body{
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1.3; 
+   width: 100%;
+
+}
+.header {
+background-image: url(../images/header-bg.jpg);
+
+height: 1080px;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+.header__top{
+    padding-top: 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-left: 20px;
+margin-right: 20px;
+}
+
+.menu__btn{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 70px;
+height: 23px;
+}
+
+.menu__btn span{
+background-color: #FF5017;
+width: 100%;
+height: 3px;
+}
+
+.header__content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title{
+    position: absolute;
+    left: 60px;
+ font-size: 345px;
+ line-height: 0.8;
+ padding: 0;
+ margin: 0;
+ background: linear-gradient(180deg, #000000 0%, #830B02 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ text-fill-color: transparent;
+
+}
+.subtitle{
+    position: absolute;
+    z-index: 0;
+    top: 530px;
+    right: 150px;
+font-size: 160px;
+background: linear-gradient(90deg, #FF5017 0%, #000000 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+align-self: flex-end;
+
+}
+.header__images{
+position: absolute;
+z-index: 1;
+left: 0;
+right: 0;
+bottom: 0;
+top:470px;
+margin: auto;
+}
