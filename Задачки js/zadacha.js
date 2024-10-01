@@ -1,39 +1,54 @@
-alert( null || 2 || undefined );
-
-alert( alert(1) || 2 || alert(3) );
-
-alert( 1 && null && 2 );
-
-alert( null || 2 && 3 || 4 );
-
-let value = NaN;
-value &&= 10;
-value ||= 20;
-value &&= 30;
-value ||= 40;
-alert(value);
-
-let age=18
-if(14<=age<=90){
-alert(age)
+let i1 = 0;
+while (i1 < 3) { // выводит 0, затем 1, затем 2
+  alert( i1 );
+  i1++;
 }
 
-let userName = prompt("Кто там?", '');
+let i = 3;
+while (i) { // когда i будет равно 0, условие станет ложным, и цикл остановится
+  alert( i );
+  i--;
+}
 
-if (userName === 'Админ') {
+let i2 = 0;
+do {
+  alert( i2 );
+  i2++;
+} while (i2 < 3);
 
-  let pass = prompt('Пароль?', '');
+let i3 = 0;
 
-  if (pass === 'Я главный') {
-    alert( 'Здравствуйте!' );
-  } else if (pass === '' || pass === null) {
-    alert( 'Отменено' );
-  } else {
-    alert( 'Неверный пароль' );
+for (; i3 < 3;) {
+  alert( i3++ );
+}
+
+let i5
+for(i5=2;i5<11;i5++){
+    if(i5%2==0){
+        alert(i5)
+    }
+}
+
+let i7=0
+do {
+    alert( `number ${i7}!` );
+    i7++
+} while(i7<3)
+
+
+    let num;
+do {
+  num = prompt("Введите число больше 100?", 0);
+} while (num <= 100 && num);
+
+
+let n = 10;
+nextPrime:
+for (let i = 2; i <= n; i++) { // Для всех i...
+
+  for (let j = 2; j < i; j++) { // проверить, делится ли число..
+    if (i % j == 0) continue nextPrime; // не подходит, берём следующее
   }
 
-} else if (userName === '' || userName === null) {
-  alert( 'Отменено' );
-} else {
-  alert( "Я вас не знаю" );
+  alert( i ); // простое число
 }
