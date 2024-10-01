@@ -1,74 +1,71 @@
-let a = "1";
-let b = 0;
+function showMessage() {
+    alert( 'Всем привет!' );
+  }
+  
+  showMessage();
 
-switch (+a) {
-  case b + 1:
-    alert("Выполнится, т.к. значением +a будет 1, что в точности равно b+1");
-    break;
+  function sum(a, b) {
+    return a + b;
+  }
+  
+  let result = sum(1, 2);
+  alert( result ); // 3
 
-  default:
-    alert("Это не выполнится");
-}
-
-let a1 = 3;
-
-switch (a1) {
-  case 4:
-    alert('Правильно!');
-    break;
-
-  case 3: // (*) группируем оба case
-  case 5:
-    alert('Неправильно!');
-    alert("Может вам посетить урок математики?");
-    break;
-
-  default:
-    alert('Результат выглядит странновато. Честно.');
-}
-
-let arg = prompt("Введите число?");
-switch (arg) {
-  case '0':
-  case '1':
-    alert( 'Один или ноль' );
-    break;
-
-  case '2':
-    alert( 'Два' );
-    break;
-
-  case 3:
-    alert( 'Никогда не выполнится!' );
-    break;
-  default:
-    alert( 'Неизвестное значение' );
-}
-
-if(browser == 'Edge') {
-    alert("You've got the Edge!");
-  } else if (browser == 'Chrome'
-   || browser == 'Firefox'
-   || browser == 'Safari'
-   || browser == 'Opera') {
-    alert( 'Okay we support these browsers too' );
+  function checkAge(age) {
+    if (age >= 18) {
+      return true;
+    } else {
+      return confirm('А родители разрешили?');
+    }
+  }
+  
+  let age = prompt('Сколько вам лет?', 18);
+  
+  if ( checkAge(age) ) {
+    alert( 'Доступ получен' );
   } else {
-    alert( 'We hope that this page looks ok!' );
+    alert( 'Доступ закрыт' );
   }
 
-  const number = +prompt('Введите число между 0 и 3', '');
+  showMessage()     // показывает сообщение
+getAge()          // возвращает возраст (получая его каким-то образом)
+calcSum()         // вычисляет сумму и возвращает результат
+createForm()      // создаёт форму (и обычно возвращает её)
+checkPermission() // проверяет доступ, возвращая true/false
 
-switch (number) {
-  case 0:
-    alert('Вы ввели число 0');
-    break;
+function checkAge(age) {
+    if (age > 18) {
+      return true;
+    } else {
+      return confirm('Родители разрешили?');
+    }
+  }
+  checkAge(20)
 
-  case 1:
-    alert('Вы ввели число 1');
-    break;
+  function min(a, b) {
+    if (a < b) {
+      return a;
+    } else {
+      return b;
+    }
+  }
+  min(7, 5)
 
-  case 2:
-  case 3:
-    alert('Вы ввели число 2, а может и 3');
-    break;
-}
+  function pow(x, n) {
+    let result = x;
+  
+    for (let i = 1; i < n; i++) {
+      result *= x;
+    }
+  
+    return result;
+  }
+  
+  let x = prompt("x?", '');
+  let n = prompt("n?", '');
+  
+  if (n >= 1 && n % 1 == 0) {
+    alert( pow(x, n) );
+  } else {
+    alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+  }
