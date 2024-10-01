@@ -1,54 +1,74 @@
-let i1 = 0;
-while (i1 < 3) { // выводит 0, затем 1, затем 2
-  alert( i1 );
-  i1++;
+let a = "1";
+let b = 0;
+
+switch (+a) {
+  case b + 1:
+    alert("Выполнится, т.к. значением +a будет 1, что в точности равно b+1");
+    break;
+
+  default:
+    alert("Это не выполнится");
 }
 
-let i = 3;
-while (i) { // когда i будет равно 0, условие станет ложным, и цикл остановится
-  alert( i );
-  i--;
+let a1 = 3;
+
+switch (a1) {
+  case 4:
+    alert('Правильно!');
+    break;
+
+  case 3: // (*) группируем оба case
+  case 5:
+    alert('Неправильно!');
+    alert("Может вам посетить урок математики?");
+    break;
+
+  default:
+    alert('Результат выглядит странновато. Честно.');
 }
 
-let i2 = 0;
-do {
-  alert( i2 );
-  i2++;
-} while (i2 < 3);
+let arg = prompt("Введите число?");
+switch (arg) {
+  case '0':
+  case '1':
+    alert( 'Один или ноль' );
+    break;
 
-let i3 = 0;
+  case '2':
+    alert( 'Два' );
+    break;
 
-for (; i3 < 3;) {
-  alert( i3++ );
+  case 3:
+    alert( 'Никогда не выполнится!' );
+    break;
+  default:
+    alert( 'Неизвестное значение' );
 }
 
-let i5
-for(i5=2;i5<11;i5++){
-    if(i5%2==0){
-        alert(i5)
-    }
-}
-
-let i7=0
-do {
-    alert( `number ${i7}!` );
-    i7++
-} while(i7<3)
-
-
-    let num;
-do {
-  num = prompt("Введите число больше 100?", 0);
-} while (num <= 100 && num);
-
-
-let n = 10;
-nextPrime:
-for (let i = 2; i <= n; i++) { // Для всех i...
-
-  for (let j = 2; j < i; j++) { // проверить, делится ли число..
-    if (i % j == 0) continue nextPrime; // не подходит, берём следующее
+if(browser == 'Edge') {
+    alert("You've got the Edge!");
+  } else if (browser == 'Chrome'
+   || browser == 'Firefox'
+   || browser == 'Safari'
+   || browser == 'Opera') {
+    alert( 'Okay we support these browsers too' );
+  } else {
+    alert( 'We hope that this page looks ok!' );
   }
 
-  alert( i ); // простое число
+  const number = +prompt('Введите число между 0 и 3', '');
+
+switch (number) {
+  case 0:
+    alert('Вы ввели число 0');
+    break;
+
+  case 1:
+    alert('Вы ввели число 1');
+    break;
+
+  case 2:
+  case 3:
+    alert('Вы ввели число 2, а может и 3');
+    break;
 }
