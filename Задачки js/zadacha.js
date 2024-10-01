@@ -1,50 +1,39 @@
-5 > 4 
-"ананас" > "яблоко" 
-"2" > "12"
-undefined == null
-undefined === null 
-null == "\n0\n" 
-null === +"\n0\n" 
+alert( null || 2 || undefined );
 
-let year = prompt('В каком году была опубликована спецификация ECMAScript-2015?', '');
-if (year == 2015) alert( 'Вы правы!' );
+alert( alert(1) || 2 || alert(3) );
 
-let value = prompt('Какое "официальное" название JavaScript?', '');
-if (value == 'ECMAScript') {
-  alert('Верно!');
-} else {
-  alert('Не знаете? ECMAScript!');
+alert( 1 && null && 2 );
+
+alert( null || 2 && 3 || 4 );
+
+let value = NaN;
+value &&= 10;
+value ||= 20;
+value &&= 30;
+value ||= 40;
+alert(value);
+
+let age=18
+if(14<=age<=90){
+alert(age)
 }
 
-let value1 = prompt('Введите число', "");
+let userName = prompt("Кто там?", '');
 
-if (value1 > 0) {
-  alert( 1 );
-} else if (value1 < 0) {
-  alert( -1 );
+if (userName === 'Админ') {
+
+  let pass = prompt('Пароль?', '');
+
+  if (pass === 'Я главный') {
+    alert( 'Здравствуйте!' );
+  } else if (pass === '' || pass === null) {
+    alert( 'Отменено' );
+  } else {
+    alert( 'Неверный пароль' );
+  }
+
+} else if (userName === '' || userName === null) {
+  alert( 'Отменено' );
 } else {
-  alert( 0 );
+  alert( "Я вас не знаю" );
 }
-
-let result
-let a=1
-let b=2
- result = (a + b < 4) ? 'Мало' : 'Много';
- alert(result);
-
- let message;
-
-if (login == 'Сотрудник') {
-  message = 'Привет';
-} else if (login == 'Директор') {
-  message = 'Здравствуйте';
-} else if (login == '') {
-  message = 'Нет логина';
-} else {
-  message = '';
-}
-
-let message1 = (login == 'Сотрудник') ? 'Привет' :
-  (login == 'Директор') ? 'Здравствуйте' :
-  (login == '') ? 'Нет логина' :
-  '';
