@@ -1,56 +1,50 @@
+5 > 4 
+"ананас" > "яблоко" 
+"2" > "12"
+undefined == null
+undefined === null 
+null == "\n0\n" 
+null === +"\n0\n" 
 
-let name = "Ilya";
-alert( `hello ${1}` ); // ?
-alert( `hello ${"name"}` ); // ?
-alert( `hello ${name}` ); // ?
+let year = prompt('В каком году была опубликована спецификация ECMAScript-2015?', '');
+if (year == 2015) alert( 'Вы правы!' );
 
-let age = prompt('Сколько тебе лет?', "");
-alert(`Тебе ${age} лет!`);
+let value = prompt('Какое "официальное" название JavaScript?', '');
+if (value == 'ECMAScript') {
+  alert('Верно!');
+} else {
+  alert('Не знаете? ECMAScript!');
+}
 
-let test = prompt("Test", "");
+let value1 = prompt('Введите число', "");
 
-let isBoss = confirm("Ты здесь главный?");
-alert( isBoss );
+if (value1 > 0) {
+  alert( 1 );
+} else if (value1 < 0) {
+  alert( -1 );
+} else {
+  alert( 0 );
+}
 
-let x = 1;
-x = -x;
-alert( x );
+let result
+let a=1
+let b=2
+ result = (a + b < 4) ? 'Мало' : 'Много';
+ alert(result);
 
-let m = 1, y = 3;
-alert( y - m );
+ let message;
 
-alert( 2 ** 2 ); // 2² = 4
-alert( 2 ** 3 ); // 2³ = 8
-alert( 2 ** 4 ); // 2⁴ = 16
+if (login == 'Сотрудник') {
+  message = 'Привет';
+} else if (login == 'Директор') {
+  message = 'Здравствуйте';
+} else if (login == '') {
+  message = 'Нет логина';
+} else {
+  message = '';
+}
 
-let a = 1, b = 1;
-
-let c = ++a; // ?
-let d = b++; // ?
-
-let a = 2;
-let x = 1 + (a *= 2);
-
-"" + 1 + 0
-"" - 1 + 0
-true + false
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-"  -9  " + 5
-"  -9  " - 5
-null + 1
-undefined + 1
-" \t \n" - 2
-
-let k = +prompt("Первое число?", 1);
-let z = +prompt("Второе число?", 2);
-alert(a + b);
-
-let l = prompt("Первое число?", 1);
-let zy = prompt("Второе число?", 2);
-alert(a + b); // 12
-
+let message1 = (login == 'Сотрудник') ? 'Привет' :
+  (login == 'Директор') ? 'Здравствуйте' :
+  (login == '') ? 'Нет логина' :
+  '';
