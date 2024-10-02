@@ -1,71 +1,59 @@
-function showMessage() {
-    alert( 'Всем привет!' );
-  }
-  
-  showMessage();
+let age = prompt("Сколько Вам лет?", 18);
 
-  function sum(a, b) {
-    return a + b;
-  }
-  
-  let result = sum(1, 2);
-  alert( result ); // 3
+let welcome;
 
-  function checkAge(age) {
-    if (age >= 18) {
-      return true;
-    } else {
-      return confirm('А родители разрешили?');
-    }
-  }
-  
-  let age = prompt('Сколько вам лет?', 18);
-  
-  if ( checkAge(age) ) {
-    alert( 'Доступ получен' );
-  } else {
-    alert( 'Доступ закрыт' );
-  }
+if (age < 18) {
 
-  showMessage()     // показывает сообщение
-getAge()          // возвращает возраст (получая его каким-то образом)
-calcSum()         // вычисляет сумму и возвращает результат
-createForm()      // создаёт форму (и обычно возвращает её)
-checkPermission() // проверяет доступ, возвращая true/false
+  welcome = function() {
+    alert("Привет!");
+  };
 
-function checkAge(age) {
-    if (age > 18) {
-      return true;
-    } else {
-      return confirm('Родители разрешили?');
-    }
-  }
-  checkAge(20)
+} else {
 
-  function min(a, b) {
-    if (a < b) {
-      return a;
-    } else {
-      return b;
-    }
-  }
-  min(7, 5)
+  welcome = function() {
+    alert("Здравствуйте!");
+  };
 
-  function pow(x, n) {
-    let result = x;
-  
-    for (let i = 1; i < n; i++) {
-      result *= x;
-    }
-  
-    return result;
-  }
-  
-  let x = prompt("x?", '');
-  let n = prompt("n?", '');
-  
-  if (n >= 1 && n % 1 == 0) {
-    alert( pow(x, n) );
-  } else {
-    alert(`Степень ${n} не поддерживается, используйте натуральное число`);
-  }
+}
+
+welcome(); // теперь всё в порядке
+
+let sum = (a, b) => a + b;
+
+/* Эта стрелочная функция представляет собой более короткую форму:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+
+alert( sum(1, 2) ); // 3
+
+let sum1 = (a, b) => {  // фигурная скобка, открывающая тело многострочной функции
+  let result = a + b;
+  return result; // если мы используем фигурные скобки, то нам нужно явно указать "return"
+};
+
+alert( sum(1, 2) ); // 3
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  function() { alert("Вы согласились."); },
+  function() { alert("Вы отменили выполнение."); }
+);
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  () => alert("Вы согласились."),
+  () => alert("Вы отменили выполнение.")
+);
