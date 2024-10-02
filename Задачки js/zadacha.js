@@ -1,49 +1,28 @@
-let obj = {
-    for: 1,
-    let: 2,
-    return: 3
+let user = { name: 'John' };
+let admin = user;
+admin.name = 'Pete'; // изменено по ссылке из переменной "admin"
+alert(user.name); // 'Pete', изменения видны по ссылке из переменной "user"
+
+
+
+let user = {
+    name: "John",
+    age: 30
   };
-  
-  alert( obj.for + obj.let + obj.return );  // 6
-
-//Создайте пустой объект user.
-//Добавьте свойство name со значением John.
-//Добавьте свойство surname со значением Smith.
-//Измените значение свойства name на Pete.
-//Удалите свойство name из объекта.
-
-let user = {};
-user.name = "John";
-user.surname = "Smith";
-user.name = "Pete";
-delete user.name;
-
-//Интересно очень
-let salaries = {
-    John: 100,
-    Ann: 160,
-    Pete: 130
+  let clone = {}; // новый пустой объект
+  // давайте скопируем все свойства user в него
+  for (let key in user) {
+    clone[key] = user[key];
   }
-  let sum=0
-  for (let key in salaries){
-    sum += salaries[key];
-  }
-  alert(sum);
+  // теперь clone это полностью независимый объект с тем же содержимым
+  clone.name = "Pete"; // изменим в нём данные
+  alert( user.name ); // все ещё John в первоначальном объекте
 
-  
- //оч интересно понятно вернусь  
-  let menu = {
-    width: 200,
-    height: 300,
-    title: "My menu"
-  };
 
-  function multiplyNumeric(obj) {
-    for (let key in obj) {
-      if (typeof obj[key] == 'number') {
-        obj[key] *= 2;
-      }
-    }
-  }
-  multiplyNumeric(menu)
-  alert(menu.width)
+
+  let user = { name: "John" };
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+// копируем все свойства из permissions1 и permissions2 в user
+Object.assign(user, permissions1, permissions2);
+// теперь user = { name: "John", canView: true, canEdit: true }
