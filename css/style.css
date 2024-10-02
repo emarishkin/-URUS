@@ -116,6 +116,7 @@ right: 0;
 bottom: 0;
 top:470px;
 margin: auto;
+max-width: 100%;
 }
 
 .info{
@@ -286,7 +287,9 @@ text-transform: uppercase;
 
 .form__order{
     width: 100%;
-    
+    background-color: #FF5017;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .footer{
