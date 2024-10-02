@@ -1,59 +1,79 @@
-let age = prompt("Сколько Вам лет?", 18);
+function pow(x, n) {
+  if (n < 0) {
+    alert("Отрицательные значения 'n' не поддерживаются");
+  } else {
+    let result = 1;
 
-let welcome;
+    for (let i = 0; i < n; i++) {
+      result *= x;
+    }
 
-if (age < 18) {
+    return result;
+  }
+}
+alert(pow(2, 4))
 
-  welcome = function() {
-    alert("Привет!");
-  };
+function showPrimes(n) {
 
-} else {
+  for (let i = 2; i < n; i++) {
+    if (!isPrime(i)) continue;//простое число
 
-  welcome = function() {
-    alert("Здравствуйте!");
-  };
-
+    alert(i);
+  }
 }
 
-welcome(); // теперь всё в порядке
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % i == 0) return false;
+  }
 
-let sum = (a, b) => a + b;
-
-/* Эта стрелочная функция представляет собой более короткую форму:
-
-let sum = function(a, b) {
-  return a + b;
-};
-*/
-
-alert( sum(1, 2) ); // 3
-
-let sum1 = (a, b) => {  // фигурная скобка, открывающая тело многострочной функции
-  let result = a + b;
-  return result; // если мы используем фигурные скобки, то нам нужно явно указать "return"
-};
-
-alert( sum(1, 2) ); // 3
-
-function ask(question, yes, no) {
-  if (confirm(question)) yes()
-  else no();
+  return true;
 }
 
-ask(
-  "Вы согласны?",
-  function() { alert("Вы согласились."); },
-  function() { alert("Вы отменили выполнение."); }
-);
+describe("pow", function() {
 
-function ask(question, yes, no) {
-  if (confirm(question)) yes()
-  else no();
-}
+  it("возводит число в степень n", function() {
+    assert.equal(pow(2, 3), 8);
+    assert.equal(pow(3, 3), 27);
+  });
 
-ask(
-  "Вы согласны?",
-  () => alert("Вы согласились."),
-  () => alert("Вы отменили выполнение.")
-);
+});
+
+describe("pow", function() {
+
+  it("2 в степени 3 будет 8", function() {
+    assert.equal(pow(2, 3), 8);
+  });
+
+  it("3 в степени 3 будет 27", function() {
+    assert.equal(pow(3, 3), 27);
+  });
+
+});
+
+it("Возводит x в степень n", function() {
+  let x = 5;
+
+  let result = x;
+  assert.equal(pow(x, 1), result);
+
+  result *= x;
+  assert.equal(pow(x, 2), result);
+
+  result *= x;
+  assert.equal(pow(x, 3), result);
+});
+
+describe("Возводит x в степень n", function() {
+  it("5 в степени 1 будет 5", function() {
+    assert.equal(pow(5, 1), 5);
+  });
+
+  it("5 в степени 2 будет 25", function() {
+    assert.equal(pow(5, 2), 25);
+  });
+
+  it("5 в степени 3 будет 125", function() {
+    assert.equal(pow(5, 3), 125);
+  });
+});
