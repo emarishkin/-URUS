@@ -299,3 +299,7 @@ text-transform: uppercase;
     color: #f8f8f8;
     background-color: #BCBCBC;
 }
+
+.error_js{
+    color:red;
+}
